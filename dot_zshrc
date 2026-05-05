@@ -2,7 +2,10 @@ eval "$(zoxide init zsh)"
 
 alias c="clear"
 alias v="nvim"
-alias e="emacs -nw"
+alias e="emacsclient -t -a ''" 
+alias ec="emacsclient -c -n -a ''"
+alias edaemon="emacs --daemon"
+alias ekill="emacsclient -e '(kill-emacs)'"
 
 # # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
