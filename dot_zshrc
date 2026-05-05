@@ -7,6 +7,8 @@ alias ec="emacsclient -c -n -a ''"
 alias edaemon="emacs --daemon"
 alias ekill="emacsclient -e '(kill-emacs)'"
 
+export EDITOR="emacsclient -t -a ''"
+
 # # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(but completions zsh)"
