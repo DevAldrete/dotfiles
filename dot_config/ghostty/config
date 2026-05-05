@@ -1,0 +1,21 @@
+# Theme and Window
+theme = tokyonight
+background-opacity = 0.90
+background-blur = 20
+macos-titlebar-style = hidden
+window-padding-x = 10
+window-padding-y = 10
+
+# Font
+font-family = FiraCode Nerd Font
+font-size = 13
+font-thicken = true
+adjust-cell-height = 10%
+
+# Behavior
+copy-on-select = true
+confirm-close-surface = false
+
+# Custom Keybinds
+keybind = ctrl+shift+enter=new_split:right
+keybind = ctrl+shift+down=new_split:down
