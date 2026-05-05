@@ -1,5 +1,5 @@
 # Theme and Window
-theme = tokyonight
+theme = oxocarbon.conf
 background-opacity = 0.90
 background-blur = 20
 macos-titlebar-style = hidden

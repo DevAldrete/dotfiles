@@ -8,6 +8,7 @@ alias edaemon="emacs --daemon"
 alias ekill="emacsclient -e '(kill-emacs)'"
 
 export EDITOR="emacsclient -t -a ''"
+export COLORTERM=truecolor
 
 # # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
