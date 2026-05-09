@@ -24,7 +24,7 @@ brew "ols"
 brew "zls"
 brew "pyright"
 brew "biome"
-brew "emacs-plus", args: ["with-native-comp", "with-modern-domo-icon"]
+brew "emacs-plus@30"
 cask "nikitabobko/tap/aerospace"
 cask "ghostty"
 cask "helium-browser"
