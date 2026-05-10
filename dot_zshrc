@@ -7,7 +7,7 @@ alias ec="emacsclient -c -n -a ''"
 alias edaemon="emacs --daemon"
 alias ekill="emacsclient -e '(kill-emacs)'"
 
-export EDITOR="emacsclient -t -a ''"
+export EDITOR="nvim"
 export COLORTERM=truecolor
 
 # # Added by GitButler installer
