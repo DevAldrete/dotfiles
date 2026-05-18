@@ -1,6 +1,7 @@
 eval "$(zoxide init zsh)"
 
 alias c="clear"
+alias ls="eza"
 alias v="nvim"
 alias e="emacsclient -t -a ''" 
 alias ec="emacsclient -c -n -a ''"
@@ -9,6 +10,13 @@ alias ekill="emacsclient -e '(kill-emacs)'"
 
 export EDITOR="nvim"
 export COLORTERM=truecolor
+
+# Shell completion init
+autoload -Uz compinit
+compinit
+
+# GHCup
+export PATH="$HOME/.ghcup/bin:$PATH"
 
 # # Added by GitButler installer
 export PATH="$HOME/.local/bin:$PATH"
