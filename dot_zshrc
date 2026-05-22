@@ -1,5 +1,3 @@
-eval "$(zoxide init zsh)"
-
 alias c="clear"
 alias ls="eza"
 alias v="nvim"
@@ -14,6 +12,15 @@ export COLORTERM=truecolor
 # Shell completion init
 autoload -Uz compinit
 compinit
+
+# Go binaries
+export PATH="$HOME/go/bin:$PATH"
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/aldrete/.zsh/completions:"* ]]; then export FPATH="/Users/aldrete/.zsh/completions:$FPATH"; fi
 
 # GHCup
 export PATH="$HOME/.ghcup/bin:$PATH"
@@ -57,3 +64,4 @@ zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
+. "/Users/aldrete/.deno/env"
