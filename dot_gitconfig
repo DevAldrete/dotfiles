@@ -1,0 +1,69 @@
+[user]
+	name = Quell
+  email = quellkrafts@gmail.com
+
+[alias]
+    # ==========================================
+    # 1. THE ESSENTIALS (Speed & Typo Fixers)
+    # ==========================================
+    st = status -sb                  # Short status with branch info
+    co = checkout                    # Quick checkout
+    sw = switch                      # Modern branch switching
+    cb = checkout -b                 # Create and switch to a new branch
+    ci = commit                      # Quick commit
+    br = branch                      # Quick branch
+    
+    # ==========================================
+    # 2. BEAUTIFUL LOGGING & HISTORY
+    # ==========================================
+    # A highly readable, colorized, graph-based log
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    
+    # Same as 'lg' but shows all branches and refs
+    lga = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+    
+    # See who changed what last
+    who = shortlog -sn --no-merges
+    
+    # ==========================================
+    # 3. WORKFLOW SHORTCUTS
+    # ==========================================
+    # Add everything and commit with a message
+    ac = !git add . && git commit -m
+    
+    # Add everything and amend the last commit without changing the message
+    amend = commit --amend --no-edit
+    
+    # Unstage files that you accidentally added
+    unstage = restore --staged
+    
+    # Discard all local changes in the working directory (use with caution!)
+    nuke = !git reset --hard HEAD && git clean -fd
+    
+    # Undo the last commit but keep the changes in your working tree
+    undo = reset HEAD~1 --mixed
+    
+    # ==========================================
+    # 4. BRANCH MANAGEMENT & CLEANUP
+    # ==========================================
+    # Delete all local branches that have already been merged into main/master
+    cleanup = !git branch --merged | grep -v '\\*' | grep -v 'master' | grep -v 'main' | xargs -n 1 git branch -d
+    
+    # Fetch and prune deleted remote branches
+    sync = fetch -p
+    
+    # Quickly review what you are about to commit (staged changes)
+    staged = diff --staged
+    
+    # Launch Neovim (or your default configured difftool) to resolve conflicts
+    resolve = mergetool -t nvimdiff
+    
+    # Search for a specific word or phrase in the commit history (commit messages)
+    find = log -S
+    
+    # Open the global .gitconfig file in your default editor for quick tweaks
+    edit-config = config --global -e
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
