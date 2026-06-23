@@ -6,8 +6,9 @@ alias ec="emacsclient -c -n -a ''"
 alias edaemon="emacs --daemon"
 alias ekill="emacsclient -e '(kill-emacs)'"
 
-export EDITOR="nvim"
+export EDITOR="hx"
 export COLORTERM=truecolor
+export MANPAGER="nvim +Man!"
 
 # Shell completion init
 autoload -Uz compinit
@@ -15,6 +16,9 @@ compinit
 
 # Go binaries
 export PATH="$HOME/go/bin:$PATH"
+
+# Nim binaries
+export PATH="$HOME/.nimble/bin:$PATH"
 
 # Zoxide
 eval "$(zoxide init zsh)"

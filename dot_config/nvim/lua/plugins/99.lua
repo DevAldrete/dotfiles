@@ -5,7 +5,7 @@ return {
 
 		_99.setup({
 			provider = _99.Providers.OpenCodeProvider,
-			model = "deepseek-v4-flash",
+			model = "github-copilot/claude-haiku-4.5",
 
 			tmp_dir = "./temp",
 
