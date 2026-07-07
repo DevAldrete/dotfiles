@@ -20,18 +20,21 @@ export PATH="$HOME/go/bin:$PATH"
 # Nim binaries
 export PATH="$HOME/.nimble/bin:$PATH"
 
+# Java
+export PATH="$(brew --prefix openjdk@21)/bin:$PATH"
+
 # Zoxide
 eval "$(zoxide init zsh)"
 
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/aldrete/.zsh/completions:"* ]]; then export FPATH="/Users/aldrete/.zsh/completions:$FPATH"; fi
+# if [[ ":$FPATH:" != *":/Users/aldrete/.zsh/completions:"* ]]; then export FPATH="/Users/aldrete/.zsh/completions:$FPATH"; fi
 
 # GHCup
-export PATH="$HOME/.ghcup/bin:$PATH"
+# export PATH="$HOME/.ghcup/bin:$PATH"
 
 # # Added by GitButler installer
-export PATH="$HOME/.local/bin:$PATH"
-eval "$(but completions zsh)"
+# export PATH="$HOME/.local/bin:$PATH"
+# eval "$(but completions zsh)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -68,7 +71,10 @@ zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
-. "/Users/aldrete/.deno/env"
+# Fnm
+eval "$(fnm env)"
+
+# . "/Users/aldrete/.deno/env"
 
 # Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

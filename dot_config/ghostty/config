@@ -1,5 +1,5 @@
 # Theme and Window
-theme = oxocarbon.conf
+theme = Arthur
 background-opacity = 0.90
 background-blur = 20
 macos-titlebar-style = hidden
