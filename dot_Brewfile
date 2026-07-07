@@ -39,11 +39,11 @@ brew "delve"
 brew "neurosnap/tap/zmx", trusted: true
 cask "nikitabobko/tap/aerospace"
 cask "battery"
-cask "ghostty"
+cask "vivaldi"
 cask "kdenlive"
 cask "siddharthvaddem/openscreen/openscreen", trusted: true
 cask "orbstack"
 cask "raycast"
 cask "pearcleaner"
 cask "bitwarden"
-cask "brave-browser"
+cask "alacritty"
