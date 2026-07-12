@@ -10,7 +10,7 @@ brew "yazi"
 brew "zoxide"
 brew "fastfetch"
 brew "helix"
-brew "neurosnap/tap/zmx", trusted: true
+brew "tmux"
 cask "nikitabobko/tap/aerospace"
 cask "helium-browser"
 cask "font-jetbrains-mono-nerd-font"
