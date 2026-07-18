@@ -8,7 +8,7 @@ padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "buttonless"   # keep native traffic-light/close controls but no title bar clutter
                              # use "none" if aerospace manages all chrome and you want zero decoration
-opacity = 1.0
+opacity = 0.92
 
 [scrolling]
 history = 5000

@@ -1,40 +1,36 @@
 alias c="clear"
 alias ls="eza"
 alias v="nvim"
-alias e="emacsclient -t -a ''" 
-alias ec="emacsclient -c -n -a ''"
-alias edaemon="emacs --daemon"
-alias ekill="emacsclient -e '(kill-emacs)'"
 
 export EDITOR="hx"
 export COLORTERM=truecolor
-export MANPAGER="nvim +Man!"
+
+setopt PROMPT_SUBST
+
+parse_git_status() {
+  local clean_fg="$1" dirty_fg="$2"
+  local git_branch git_status
+  git_branch="$(git symbolic-ref --short HEAD 2>/dev/null)" \
+    || git_branch="$(git rev-parse --short HEAD 2>/dev/null)"
+  [[ -z "$git_branch" ]] && return
+
+  git_status="$(git status --porcelain 2>/dev/null)"
+  if [[ -n "$git_status" ]]; then
+    echo " %F{$dirty_fg}${git_branch}*%f"
+  else
+    echo " %F{$clean_fg}${git_branch}%f"
+  fi
+}
+
+PROMPT='%F{cyan}%n%f in %F{white}%1~%f$(parse_git_status green yellow) %F{cyan}$%f '
+unset RPROMPT
 
 # Shell completion init
 autoload -Uz compinit
 compinit
 
-# Go binaries
-export PATH="$HOME/go/bin:$PATH"
-
-# Nim binaries
-export PATH="$HOME/.nimble/bin:$PATH"
-
-# Java
-export PATH="$(brew --prefix openjdk@21)/bin:$PATH"
-
 # Zoxide
 eval "$(zoxide init zsh)"
-
-# Add deno completions to search path
-# if [[ ":$FPATH:" != *":/Users/aldrete/.zsh/completions:"* ]]; then export FPATH="/Users/aldrete/.zsh/completions:$FPATH"; fi
-
-# GHCup
-# export PATH="$HOME/.ghcup/bin:$PATH"
-
-# # Added by GitButler installer
-# export PATH="$HOME/.local/bin:$PATH"
-# eval "$(but completions zsh)"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -56,11 +52,6 @@ autoload -Uz _zinit
 # Tell dotenv to automatically load
 export ZSH_DOTENV_PROMPT=false
 
-# Initialize Starship safely after zsh-vi-mode
-function zvm_after_init() {
-  eval "$(starship init zsh)"
-}
-
 # Steal the dotenv plugin directly from Oh-My-Zsh
 zinit snippet OMZP::dotenv
 
@@ -71,10 +62,5 @@ zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
-# Fnm
-eval "$(fnm env)"
-
-# . "/Users/aldrete/.deno/env"
-
-# Generated for envman. Do not edit.
-# [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+# Load Nanobrew Binaries
+export PATH="/opt/nanobrew/prefix/bin:$PATH"
