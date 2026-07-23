@@ -1,0 +1,66 @@
+#
+# Minimalist Helix config, tuned for focused, low-distraction writing/coding.
+# Place at: ~/.config/helix/config.toml
+#
+
+theme = "retro-amber"
+
+[editor]
+# No rulers, no distracting vertical lines
+rulers = []
+
+# Just enough breathing room around the cursor
+scrolloff = 8
+
+# Keep the eye anchored to the current line without a loud highlight
+cursorline = true
+
+# Relative numbers make jumps (5j, 3k) fast without needing to think
+line-number = "relative"
+
+# Hide the tab/bufferline when you only have one file open — one thing at a time
+bufferline = "multiple"
+
+# Skip whitespace clutter
+[editor.whitespace]
+render = "none"
+
+# Turn off indent guides — one less set of lines competing for attention
+[editor.indent-guides]
+render = false
+
+# Keep the gutter lean: just line numbers + diagnostics, no diff markers
+gutters = ["diagnostics", "line-numbers"]
+
+# Soft wrap long lines instead of horizontal scrolling
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "file-name"]
+center = []
+right = ["file-type", "position"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+# Auto-save on focus loss / idle — one less thing to remember
+[editor.auto-save]
+focus-lost = true
+
+[editor.lsp]
+display-messages = false
+display-inlay-hints = false
+
+[keys.normal]
+# Quick escape-to-save habit
+"C-s" = ":w"

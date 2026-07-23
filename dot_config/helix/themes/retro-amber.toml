@@ -1,0 +1,129 @@
+# retro-amber.toml
+# A warm, single-hue "amber phosphor CRT" theme for Helix.
+# Goal: minimal color spread so nothing fights for attention — most
+# tokens share one amber family, with only comments and strings
+# dialed back or up in brightness.
+
+# ---- syntax highlighting --------------------------------------------
+"comment" = { fg = "fg-dim", modifiers = ["italic"] }
+
+"variable" = "fg"
+"variable.builtin" = "fg-bright"
+"variable.parameter" = "fg"
+"variable.other.member" = "fg"
+
+"constant" = "fg-bright"
+"constant.builtin" = "fg-bright"
+"constant.character.escape" = "string"
+"constant.numeric" = "fg-bright"
+
+"string" = "string"
+"string.regexp" = "string"
+"string.special" = "fg-bright"
+
+"type" = "fg-bright"
+"type.builtin" = "fg-bright"
+"constructor" = "fg-bright"
+
+"function" = "fg"
+"function.builtin" = "fg-bright"
+"function.macro" = "fg-bright"
+
+"keyword" = { fg = "fg-bright", modifiers = ["bold"] }
+"keyword.control" = { fg = "fg-bright", modifiers = ["bold"] }
+"keyword.control.conditional" = { fg = "fg-bright", modifiers = ["bold"] }
+"keyword.operator" = "fg-dim"
+"keyword.directive" = "fg-dim"
+
+"operator" = "fg-dim"
+"punctuation" = "fg-dim"
+"punctuation.delimiter" = "fg-dim"
+"punctuation.bracket" = "fg-dim"
+
+"label" = "fg"
+"namespace" = "fg"
+"tag" = "fg-bright"
+"attribute" = "fg-dim"
+
+"markup.heading" = { fg = "fg-bright", modifiers = ["bold"] }
+"markup.list" = "fg"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "string", modifiers = ["underlined"] }
+"markup.link.text" = "fg-bright"
+"markup.quote" = "fg-dim"
+"markup.raw" = "fg-dim"
+
+"diff.plus" = "ok"
+"diff.minus" = "error"
+"diff.delta" = "warn"
+
+"diagnostic.warning" = { underline = { color = "warn", style = "curl" } }
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "ok", style = "dotted" } }
+
+"error" = "error"
+"warning" = "warn"
+"info" = "ok"
+"hint" = "ok"
+
+# ---- editor / UI chrome ----------------------------------------------
+"ui.background" = { bg = "bg" }
+"ui.text" = { fg = "fg" }
+"ui.text.focus" = { fg = "fg-bright" }
+"ui.text.inactive" = "fg-dim"
+
+"ui.cursor" = { fg = "bg", bg = "fg" }
+"ui.cursor.primary" = { fg = "bg", bg = "fg-bright" }
+"ui.cursor.match" = { fg = "fg-bright", modifiers = ["bold"] }
+
+"ui.cursorline.primary" = { bg = "bg-cursorline" }
+"ui.selection" = { bg = "bg-selection" }
+"ui.selection.primary" = { bg = "bg-selection" }
+
+"ui.linenr" = { fg = "fg-dimmer" }
+"ui.linenr.selected" = { fg = "fg-dim" }
+
+"ui.statusline" = { fg = "fg-dim", bg = "bg-soft" }
+"ui.statusline.inactive" = { fg = "fg-dimmer", bg = "bg-soft" }
+"ui.statusline.normal" = { fg = "bg", bg = "fg", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "string", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "fg-bright", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "fg", bg = "bg-soft" }
+"ui.window" = { fg = "fg-dimmer" }
+"ui.help" = { fg = "fg", bg = "bg-soft" }
+
+"ui.menu" = { fg = "fg", bg = "bg-soft" }
+"ui.menu.selected" = { fg = "bg", bg = "fg" }
+
+"ui.bufferline" = { fg = "fg-dim", bg = "bg-soft" }
+"ui.bufferline.active" = { fg = "fg-bright", bg = "bg", modifiers = ["bold"] }
+
+"ui.gutter" = { bg = "bg" }
+"ui.gutter.selected" = { bg = "bg-cursorline" }
+
+"ui.virtual.whitespace" = "fg-dimmer"
+"ui.virtual.ruler" = { bg = "bg-soft" }
+"ui.virtual.indent-guide" = "fg-dimmer"
+"ui.virtual.inlay-hint" = { fg = "fg-dimmer", bg = "bg-soft" }
+
+"ui.highlight" = { bg = "bg-selection" }
+
+
+# ---- palette -------------------------------------------------------
+[palette]
+"bg"            = "#1a1309"   # near-black warm brown, like a CRT off-glow
+"bg-soft"       = "#241a0c"   # panels, status line
+"bg-selection"  = "#3a2a10"   # selections
+"bg-cursorline" = "#221807"   # current line wash
+
+"fg"            = "#ffb000"   # primary amber — body text/code
+"fg-bright"     = "#ffcc66"   # keywords, headings — a touch hotter
+"fg-dim"        = "#8a6a2f"   # comments, punctuation, muted UI
+"fg-dimmer"     = "#5c4720"   # line numbers, inactive UI
+
+"string"        = "#d1a53d"   # slightly desaturated amber for strings
+"warn"          = "#d97f43"   # warnings — stays in the warm family
+"error"         = "#c9543a"   # errors — the one deliberately "off" hue
+"ok"            = "#9a8a4a"   # hints/success, muted olive-amber

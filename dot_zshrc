@@ -67,3 +67,10 @@ export PATH="/opt/nanobrew/prefix/bin:$PATH"
 
 # Load local binaries
 export PATH="$HOME/.local/bin:$PATH"
+
+# Sdkman
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# Fnm
+eval "$(fnm env)"
