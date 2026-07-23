@@ -64,3 +64,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 # Load Nanobrew Binaries
 export PATH="/opt/nanobrew/prefix/bin:$PATH"
+
+# Load local binaries
+export PATH="$HOME/.local/bin:$PATH"
