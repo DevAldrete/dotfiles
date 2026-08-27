@@ -1,0 +1,130 @@
+# ==============================================================================
+# AeroSpace Configuration (Hyper Key: Ctrl + Alt + Cmd + Shift)
+# ==============================================================================
+
+config-version = 2
+
+# Start AeroSpace at login
+start-at-login = true
+
+# Automatically reload config on save
+auto-reload-config = true
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Default layout
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+accordion-padding = 30
+
+# Layout & Window gaps
+[gaps]
+inner.horizontal = 8
+inner.vertical   = 8
+outer.left       = 8
+outer.bottom     = 8
+outer.top        = 8
+outer.right      = 8
+
+# ==============================================================================
+# Main Keybindings (Hyper = ctrl-alt-cmd-shift)
+# ==============================================================================
+[mode.main.binding]
+
+# --- Layout Switches ---
+ctrl-alt-cmd-shift-slash = 'layout tiles horizontal vertical'
+ctrl-alt-cmd-shift-comma = 'layout accordion horizontal vertical'
+ctrl-alt-cmd-shift-f     = 'layout floating tiling'
+ctrl-alt-cmd-shift-e     = 'balance-sizes'
+
+# --- Focus Navigation (Vim Keys) ---
+ctrl-alt-cmd-shift-h = 'focus left'
+ctrl-alt-cmd-shift-j = 'focus down'
+ctrl-alt-cmd-shift-k = 'focus up'
+ctrl-alt-cmd-shift-l = 'focus right'
+
+# --- Focus Navigation (Arrow Keys) ---
+ctrl-alt-cmd-shift-left  = 'focus left'
+ctrl-alt-cmd-shift-down  = 'focus down'
+ctrl-alt-cmd-shift-up    = 'focus up'
+ctrl-alt-cmd-shift-right = 'focus right'
+
+# --- Window Movement (Service Mode is alternative, or use dedicated letters) ---
+# Tip: If your Hyper key already holds Shift, standard aerospace "move" bindings
+# can map to distinct keys (e.g. m+vim keys or arrows in main mode):
+ctrl-alt-cmd-shift-leftSquareBracket  = 'move left'
+ctrl-alt-cmd-shift-rightSquareBracket = 'move right'
+
+# --- Workspaces: Switch Focus ---
+ctrl-alt-cmd-shift-1 = 'workspace 1'
+ctrl-alt-cmd-shift-2 = 'workspace 2'
+ctrl-alt-cmd-shift-3 = 'workspace 3'
+ctrl-alt-cmd-shift-4 = 'workspace 4'
+ctrl-alt-cmd-shift-5 = 'workspace 5'
+ctrl-alt-cmd-shift-6 = 'workspace 6'
+ctrl-alt-cmd-shift-7 = 'workspace 7'
+ctrl-alt-cmd-shift-8 = 'workspace 8'
+ctrl-alt-cmd-shift-9 = 'workspace 9'
+ctrl-alt-cmd-shift-tab = 'workspace-back-and-forth'
+
+# --- Workspaces: Move Node and Switch ---
+# Using letters for quick workspace assignments or enter service/move mode
+ctrl-alt-cmd-shift-b = 'workspace B'
+ctrl-alt-cmd-shift-m = 'workspace M'
+ctrl-alt-cmd-shift-t = 'workspace T'
+
+# --- Modes ---
+ctrl-alt-cmd-shift-r = 'mode resize'
+ctrl-alt-cmd-shift-semicolon = 'mode service'
+
+# ==============================================================================
+# Resize Mode
+# ==============================================================================
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+left = 'resize width -50'
+down = 'resize height +50'
+up = 'resize height -50'
+right = 'resize width +50'
+b = 'balance-sizes'
+minus = 'resize smart -50'
+equal = 'resize smart +50'
+enter = 'mode main'
+esc = 'mode main'
+
+# ==============================================================================
+# Service Mode (For window repositioning, reload, and splits)
+# ==============================================================================
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+
+# Directional Window Movement
+h = ['move left', 'mode main']
+j = ['move down', 'mode main']
+k = ['move up', 'mode main']
+l = ['move right', 'mode main']
+
+# Move to workspace from service mode
+1 = ['move-node-to-workspace 1', 'mode main']
+2 = ['move-node-to-workspace 2', 'mode main']
+3 = ['move-node-to-workspace 3', 'mode main']
+4 = ['move-node-to-workspace 4', 'mode main']
+5 = ['move-node-to-workspace 5', 'mode main']
+6 = ['move-node-to-workspace 6', 'mode main']
+7 = ['move-node-to-workspace 7', 'mode main']
+8 = ['move-node-to-workspace 8', 'mode main']
+9 = ['move-node-to-workspace 9', 'mode main']
+
+# Join/Split windows
+shift-h = ['join-with left', 'mode main']
+shift-j = ['join-with down', 'mode main']
+shift-k = ['join-with up', 'mode main']
+shift-l = ['join-with right', 'mode main']
