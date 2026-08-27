@@ -1,5 +1,6 @@
 tap "nikitabobko/tap", trusted: true
 tap "sdkman/tap", trusted: true
+tap "tap d12frosted/emacs-plus", trusted: true
 brew "chezmoi"
 brew "eza"
 brew "fd"
@@ -20,6 +21,15 @@ brew "jdtls"
 brew "zls"
 brew "ruff"
 brew "llvm"
+brew "emacs-plus@30", trusted: true, args: ["with-imagemagick"]
+brew "cmake"
+brew "nim"
+brew "sdl3"
+brew "llvm"
+brew "php"
+brew "composer"
+brew "vcpkg"
+brew "sdl3"
 cask "nikitabobko/tap/aerospace"
 cask "helium-browser"
 cask "font-jetbrains-mono-nerd-font"
@@ -28,3 +38,5 @@ cask "pearcleaner"
 cask "bitwarden"
 cask "alacritty"
 cask "aldente"
+cask "utm"
+cask "karabiner-elements"
