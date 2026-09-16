@@ -43,13 +43,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" ── Directory browsing (built-in netrw) ─────────────────────────
-let g:netrw_liststyle    = 3
-let g:netrw_banner       = 0
-let g:netrw_browse_split = 4
-let g:netrw_winsize      = 25
-nnoremap <leader>d :Lex<CR>
-
 " ── Grep (ripgrep if available) ──────────────────────────────────
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --smart-case\ --hidden
@@ -132,3 +125,15 @@ augroup vimrc_remember_cursor
   autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
     \ | execute "normal! g`\"" | endif
 augroup END
+
+nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
+nnoremap <silent> <leader>ff :FuzzyFiles<CR>
+nnoremap <silent> <leader>fg :FuzzyGrep<CR>
+nnoremap <silent> <leader>fh :FuzzyHelp<CR>
+nnoremap <silent> <leader>fi :FuzzyInBuffer<CR>
+nnoremap <silent> <leader>fr :FuzzyMru<CR>
+nnoremap <silent> <leader>fp :FuzzyPrevious<CR>
+nnoremap <silent> <leader>fq :FuzzyQuickfix<CR>
+
+let g:loaded_netrwPlugin = 1
+nnoremap <leader>d :Dirvish<CR>

@@ -1,34 +1,32 @@
-#
-# Minimalist Helix config, tuned for focused, low-distraction writing/coding.
-# Place at: ~/.config/helix/config.toml
-#
-
-theme = "rose_pine"
+theme = "modus_vivendi"
 
 [editor]
-rulers = []
 scrolloff = 8
 cursorline = true
 line-number = "relative"
 bufferline = "multiple"
+auto-save = { focus-lost = true }
+auto-pairs = true
 
-# Skip whitespace clutter
+# Fast, contextual indenting and completion
+[editor.smart-tab]
+enable = true
+supersede-menu = true
+
 [editor.whitespace]
 render = "none"
 
-# Turn off indent guides — one less set of lines competing for attention
 [editor.indent-guides]
 render = false
-gutters = ["diagnostics", "line-numbers"]
 
-# Soft wrap long lines instead of horizontal scrolling
 [editor.soft-wrap]
 enable = true
 
 [editor.statusline]
-left = ["mode", "file-name"]
+left = ["mode", "spinner", "file-name"]
 center = []
-right = ["file-type", "position"]
+# Kept clean, but includes diagnostic counter so you know errors exist without popups
+right = ["diagnostics", "file-type", "position"]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -42,12 +40,30 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.auto-save]
-focus-lost = true
+[editor.search]
+smart-case = true
 
 [editor.lsp]
 display-messages = false
 display-inlay-hints = false
 
+[keys.insert]
+"C-[" = "normal_mode"
+
 [keys.normal]
 "C-s" = ":w"
+
+"H" = ":buffer-previous"
+"L" = ":buffer-next"
+"A-w" = ":buffer-close"
+
+"C-c" = "toggle_comments"
+"X" = "extend_line_above"
+
+"C-h" = "jump_view_left"
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-l" = "jump_view_right"
+
+[keys.select]
+"C-c" = "toggle_comments"
