@@ -1,10 +1,7 @@
 alias c="clear"
 alias v="nvim"
-alias ls="eza"
 alias ff="fastfetch"
 alias reload="source ~/.zshrc"
-alias e='emacsclient -c -a "" -n'
-alias pj="pijul"
 
 export EDITOR="nvim"
 export COLORTERM=truecolor
@@ -66,45 +63,8 @@ zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
-# Load Nanobrew Binaries
-export PATH="/opt/nanobrew/prefix/bin:$PATH"
-
 # Load local binaries
 export PATH="$HOME/.local/bin:$PATH"
 
-# Sdkman
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-
-# Fnm
-eval "$(fnm env)"
-
-# Doom
-export PATH="$HOME/.config/emacs/bin:$PATH"
-
-# opencode
-export PATH=/Users/aldrete/.opencode/bin:$PATH
-
-# sdl3
-export PKG_CONFIG_PATH="$(brew --prefix sdl3)/lib/pkgconfig:$(brew --prefix sdl3_ttf)/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PATH="$HOME/.composer/vendor/bin:$HOME/.config/composer/vendor/bin:$PATH"
-
-# c brew libs
-export LDFLAGS="-L$(brew --prefix)/lib"
-export CFLAGS="-I$(brew --prefix)/include"
-export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$(brew --prefix)/opt/ncurses/lib/pkgconfig:$(brew --prefix)/opt/tre/lib/pkgconfig"
-
-# vis
-export VIS_PATH="/usr/local/share/vis"
-export LUA_PATH="/usr/local/share/vis/?.lua;/usr/local/share/vis/?/init.lua;;"
-export LUA_CPATH="$(brew --prefix)/lib/lua/5.4/?.so;;"
-
-# vcpkg
-export PATH="/opt/homebrew/opt/vcpkg:$PATH"
-export VCPKG_ROOT="/opt/homebrew/opt/vcpkg"
-
-# Cargo binaries
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# tex binaries
-export PATH="/Library/TeX/texbin:$PATH"
+# direnv
+eval "$(direnv hook zsh)"
