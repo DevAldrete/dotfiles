@@ -1,5 +1,6 @@
 tap "nikitabobko/tap", trusted: true
 tap "wouterdebie/tap", trusted: true
+tap "neurosnap/tap", trusted: true
 brew "chezmoi"
 brew "fastfetch"
 brew "fd"
@@ -12,7 +13,8 @@ brew "tmux"
 brew "tree-sitter-cli"
 brew "btop"
 brew "colima"
-brew "wouterdebie/tap/davit"
+brew "neurosnap/tap/zmx"
+cask "wouterdebie/tap/davit"
 cask "nikitabobko/tap/aerospace"
 cask "helium-browser"
 cask "ghostty"
